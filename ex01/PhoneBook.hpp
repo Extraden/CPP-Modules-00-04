@@ -8,7 +8,7 @@ class	PhoneBook
 	public:
 		PhoneBook();
 		PhoneBook(const PhoneBook& other);
-		PhoneBook operator=(const PhoneBook& other);
+		PhoneBook& operator=(const PhoneBook& other);
 		~PhoneBook();
 	private:
 		Contact	contacts[8];

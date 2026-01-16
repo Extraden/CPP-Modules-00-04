@@ -4,9 +4,9 @@
 class	Contact
 {
 	public:
-		Contact(void);
+		Contact();
 		Contact(const Contact& other);
-		Contact operator=(const Contact& other);
+		Contact& operator=(const Contact& other);
 		~Contact();
 	private:
 };
