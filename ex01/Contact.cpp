@@ -13,7 +13,8 @@ Contact::Contact(const Contact& other)
 
 Contact& Contact::operator=(const Contact& other)
 {
-	(void)other; return *this;
+	(void)other;
+  return (*this);
 };
 
 Contact::~Contact()

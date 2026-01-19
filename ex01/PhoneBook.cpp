@@ -12,10 +12,11 @@ PhoneBook::PhoneBook(const PhoneBook& other)
 };
 
 PhoneBook& PhoneBook::operator=(const PhoneBook& other) {
+  (void) other;
 	return (*this);
 };
 
 PhoneBook::~PhoneBook()
 {
 	std::cout << "Phonebook destroyed" << std::endl;
-;
+};
