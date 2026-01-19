@@ -3,6 +3,7 @@
 
 PhoneBook::PhoneBook()
 {
+  current_index = 0;
 	std::cout << "PhoneBook created" << std::endl;
 };
 
