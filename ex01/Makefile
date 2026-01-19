@@ -19,7 +19,7 @@ $(NAME): $(SRCS)
 	$(CC) $(CXXFLAGS) $(SRCS) -o $(NAME)
 
 clean:
-	@echo "No object files to clean."
+	rm phonebook
 
 fclean: clean
 	rm -rf $(NAME)
