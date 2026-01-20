@@ -1,10 +1,7 @@
 #include "Contact.hpp"
 #include <iostream>
 
-Contact::Contact()
-{
-	std::cout << "Contact created" << std::endl;
-};
+Contact::Contact() {};
 
 Contact::Contact(const Contact& other)
 {
@@ -14,11 +11,32 @@ Contact::Contact(const Contact& other)
 Contact& Contact::operator=(const Contact& other)
 {
 	(void)other;
-  return (*this);
+  	return (*this);
 };
 
-Contact::~Contact()
+Contact::~Contact() {};
+
+void	Contact::setFirstName(void)
 {
-	std::cout << "Contact is destroyed" << std::endl;
-};
+	std::cout << "Write first name:\n";
+	std::cin >> _firstName;
+}
 
+void	Contact::setLastName(void)
+{
+	std::cout << "Write last name:\n";
+	std::cin >> _lastName;
+}
+
+void	Contact::setNickname(void)
+{
+	std::cout << "Write nickname:\n";
+	std::cin >> _nickname;
+}
+
+void	Contact::printContactInfo(void)
+{
+	std::cout << _firstName << " | ";
+	std::cout << _lastName << " | ";
+	std::cout << _nickname << "\n";
+}

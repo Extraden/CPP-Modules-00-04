@@ -11,11 +11,16 @@ class	PhoneBook
 		PhoneBook(const PhoneBook& other);
 		PhoneBook& operator=(const PhoneBook& other);
 		~PhoneBook();
-    void  increment_index();
+	int addContact(void);
+	int	searchContact(void);
+	int	printInfo(void);
+
 
 	private:
-		Contact	contacts[8];
-    size_t  current_index;
+
+		Contact	_contacts[8];
+		size_t  _currentIndex;
+		size_t	_contactsFilled;
 };
 
 #endif
