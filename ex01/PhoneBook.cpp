@@ -45,15 +45,26 @@ int		PhoneBook::printInfo(void)
 int PhoneBook::searchContact(void)
 {
   std::string  input;
+  int index;
 
   this->printInfo();
-  std::cout << "Enter index:\n";
-  std::cin >> input;
-  if (!isNumeric(input) || input.empty())
-    std::cout << "Incorrect index\nUsage: 0 - " << _contactsFilled - 1 << "\n";
-  int index = std::atoi(input.c_str());
-  if (index > static_cast<int>(_contactsFilled))
-    std::cout << "Index is out of scope. Try again\n";
+  while (1)
+  {
+    std::cout << "Enter index:\n";
+    std::cin >> input;
+    if (!isNumeric(input) || input.empty())
+    {
+      std::cout << "Incorrect index\nUsage: 0 - " << _contactsFilled - 1 << "\n";
+      continue;
+    }
+    index = std::atoi(input.c_str());
+    if (index > static_cast<int>(_contactsFilled - 1))
+    {
+      std::cout << "Index is out of scope. Try again\n";
+      continue;
+    }
+    break;
+  }
   _contacts[index].printContactInfo();
   return (0);
 }
