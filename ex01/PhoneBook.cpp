@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdlib>
 #include <iostream>
+#include <iomanip>
 
 PhoneBook::PhoneBook() : _currentIndex(0), _contactsFilled(0) {};
 
@@ -33,10 +34,10 @@ int PhoneBook::addContact(void)
 
 int		PhoneBook::printInfo(void)
 {
-  std::cout << "First Name | Last Name | Nickname\n";
+  std::cout << std::setw(10) << std::right << "First Name | Last Name | Nickname\n";
   for (size_t i = 0; i < _contactsFilled; i++)
   {
-    std::cout << i << " ";
+    std::cout << std::right << i << " ";
     _contacts[i].printContactInfo();
   }
   return (0);
