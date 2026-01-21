@@ -3,11 +3,11 @@
 # **************************************************************************** #
 
 NAME = phonebook
-CC = c++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp PhoneBook.cpp Contact.cpp utils.cpp
-INCLUDES = PhoneBook.hpp Contact.hpp utils.hpp
+OBJS = $(SRCS:.cpp=.o)
 
 # **************************************************************************** #
 #                                 Build Rules                                  #
@@ -15,14 +15,17 @@ INCLUDES = PhoneBook.hpp Contact.hpp utils.hpp
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(CXXFLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm phonebook
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

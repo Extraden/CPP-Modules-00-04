@@ -3,7 +3,7 @@
 
 #include <string>
 
-bool    isNumeric(std::string input);
+bool    isNumeric(const std::string& input);
 std::string fmt10(const std::string& input);
 
 #endif

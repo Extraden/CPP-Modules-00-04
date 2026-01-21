@@ -37,6 +37,7 @@ void		PhoneBook::printContacts() const
     std::cout << std::setw(10) << std::right << i << "|";
     _contacts[i].printContactInfo();
   }
+  std::cout << std::endl;
 }
 
 int PhoneBook::searchContact()
@@ -44,9 +45,9 @@ int PhoneBook::searchContact()
   std::string  input;
   int index;
 
-  if (!_contactsFilled)
+  if (_contactsFilled == 0)
   {
-    std::cout << "The Phonebook is empty!" << std::endl;
+    std::cout << "The Phonebook is empty!\n" << std::endl;
     return (0);
   }
   this->printContacts();
@@ -54,15 +55,16 @@ int PhoneBook::searchContact()
   {
     std::cout << "Enter index:\n";
     std::cin >> input;
+    std::cout << std::endl;
     if (!isNumeric(input) || input.empty())
     {
-      std::cout << "Incorrect index\nUsage: 0 - " << _contactsFilled - 1 << "\n";
+      std::cout << "Incorrect index\nUsage: 0 - " << _contactsFilled - 1 << "\n" << std::endl;
       continue;
     }
     index = std::atoi(input.c_str());
     if (index > static_cast<int>(_contactsFilled - 1))
     {
-      std::cout << "Index is out of scope. Try again\n";
+      std::cout << "Index is out of scope. Try again\n" << std::endl;
       continue;
     }
     break;
@@ -70,5 +72,6 @@ int PhoneBook::searchContact()
   this->printHeader();
   std::cout << std::setw(10) << std::right << index << "|";
   _contacts[index].printContactInfo();
+  std::cout << std::endl;
   return (0);
 }
