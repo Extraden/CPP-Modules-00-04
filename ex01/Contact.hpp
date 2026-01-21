@@ -12,7 +12,10 @@ class	Contact
 		void	setFirstName();
 		void	setLastName();
 		void	setNickname();
-		void	printContactInfo() const;
+		void	setPhoneNumber();
+		void	setDarkestSecret();
+		void	printBriefContactInfo() const;
+		void	printFullContactInfo() const;
 
 	private:
 		std::string _firstName;
