@@ -8,28 +8,47 @@ Contact::~Contact() {};
 
 void	Contact::setFirstName()
 {
-	std::cout << "Write first name:\n";
+	std::cout << "Write first name: ";
 	std::cin >> _firstName;
-  std::cout << std::endl;
 }
 
 void	Contact::setLastName()
 {
-	std::cout << "Write last name:\n";
+	std::cout << "Write last name: ";
 	std::cin >> _lastName;
-  std::cout << std::endl;
 }
 
 void	Contact::setNickname()
 {
-	std::cout << "Write nickname:\n";
+	std::cout << "Write nickname: ";
 	std::cin >> _nickname;
-  std::cout << std::endl;
 }
 
-void	Contact::printContactInfo() const
+void	Contact::setPhoneNumber()
 {
-	std::cout << std::setw(10) << std::right << fmt10(_firstName) << "|";
-	std::cout << std::setw(10) << std::right << fmt10(_lastName) << "|";
-	std::cout << std::setw(10) << std::right << fmt10(_nickname) << "\n";
+	std::cout << "Write phone number: ";
+	std::cin >> _phoneNumber;
+}
+
+void	Contact::setDarkestSecret()
+{
+	std::cout << "Write darkest secret: ";
+	std::cin >> _darkestSecret;
+  std::cout << "\n";
+}
+
+void	Contact::printBriefContactInfo() const
+{
+	std::cout << std::setw(10) << fmt10(_firstName) << "|"
+	          << std::setw(10) << fmt10(_lastName) << "|"
+	          << std::setw(10) << fmt10(_nickname) << "\n";
+}
+
+void	Contact::printFullContactInfo() const
+{
+	std::cout << _firstName << "\n"
+            << _lastName << "\n"
+            << _nickname << "\n"
+            << _phoneNumber << "\n"
+            << _darkestSecret << "\n";
 }

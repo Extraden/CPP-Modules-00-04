@@ -14,6 +14,8 @@ int PhoneBook::addContact()
   _contacts[_currentIndex].setFirstName();
   _contacts[_currentIndex].setLastName();
   _contacts[_currentIndex].setNickname();
+  _contacts[_currentIndex].setPhoneNumber();
+  _contacts[_currentIndex].setDarkestSecret();
   
   _currentIndex = (_currentIndex + 1) % 8;
   if (_contactsFilled < 8)
@@ -23,10 +25,11 @@ int PhoneBook::addContact()
 
 void PhoneBook::printHeader() const
 {
-  std::cout << std::setw(10) << std::right << "Index" << "|"
-            << std::setw(10) << std::right << "First Name" << "|"
-            << std::setw(10) << std::right << "Last Name" << "|"
-            << std::setw(10) << std::right << "Nickname\n";
+  std::cout << std::right 
+            << std::setw(10) << "Index" << "|"
+            << std::setw(10) << "First Name" << "|"
+            << std::setw(10) << "Last Name" << "|"
+            << std::setw(10) << "Nickname" << "\n";
 }
 
 void		PhoneBook::printContacts() const
@@ -35,7 +38,7 @@ void		PhoneBook::printContacts() const
   for (size_t i = 0; i < _contactsFilled; i++)
   {
     std::cout << std::setw(10) << std::right << i << "|";
-    _contacts[i].printContactInfo();
+    _contacts[i].printBriefContactInfo();
   }
   std::cout << std::endl;
 }
@@ -53,7 +56,7 @@ int PhoneBook::searchContact()
   this->printContacts();
   while (1)
   {
-    std::cout << "Enter index:\n";
+    std::cout << "Enter index: ";
     std::cin >> input;
     std::cout << std::endl;
     if (!isNumeric(input) || input.empty())
@@ -69,9 +72,7 @@ int PhoneBook::searchContact()
     }
     break;
   }
-  this->printHeader();
-  std::cout << std::setw(10) << std::right << index << "|";
-  _contacts[index].printContactInfo();
+  _contacts[index].printFullContactInfo();
   std::cout << std::endl;
   return (0);
 }
