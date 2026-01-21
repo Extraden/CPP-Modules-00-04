@@ -9,9 +9,9 @@ class	Contact
 		Contact();
 		~Contact();
 
-		void	setFirstName(void);
-		void	setLastName(void);
-		void	setNickname(void);
+		void	setFirstName();
+		void	setLastName();
+		void	setNickname();
 		void	printContactInfo() const;
 
 	private:

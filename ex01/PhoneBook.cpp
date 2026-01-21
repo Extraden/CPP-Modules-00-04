@@ -9,7 +9,7 @@
 PhoneBook::PhoneBook() : _currentIndex(0), _contactsFilled(0) {};
 PhoneBook::~PhoneBook() {};
 
-int PhoneBook::addContact(void)
+int PhoneBook::addContact()
 {
   _contacts[_currentIndex].setFirstName();
   _contacts[_currentIndex].setLastName();
@@ -39,11 +39,16 @@ void		PhoneBook::printContacts() const
   }
 }
 
-int PhoneBook::searchContact(void)
+int PhoneBook::searchContact()
 {
   std::string  input;
   int index;
 
+  if (!_contactsFilled)
+  {
+    std::cout << "The Phonebook is empty!" << std::endl;
+    return (0);
+  }
   this->printContacts();
   while (1)
   {

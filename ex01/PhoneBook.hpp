@@ -9,8 +9,8 @@ class	PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-	int addContact(void);
-	int	searchContact(void);
+	int addContact();
+	int	searchContact();
   void  printHeader() const;
 	void	printContacts() const;
 

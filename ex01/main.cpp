@@ -13,14 +13,14 @@ int execute_command(PhoneBook& phonebook, std::string& input)
     return (0);
 }
 
-int	main(void)
+int	main()
 {
   std::string input_command;
   PhoneBook phonebook;
 
   while (1)
   {
-    std::cout << "Type a command:\n";
+    std::cout << "Type a command:" << std::endl;
     std::cin >> input_command;
     if (execute_command(phonebook, input_command) == 1)
       break;
