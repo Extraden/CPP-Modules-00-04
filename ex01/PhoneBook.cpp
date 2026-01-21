@@ -7,17 +7,6 @@
 #include <iomanip>
 
 PhoneBook::PhoneBook() : _currentIndex(0), _contactsFilled(0) {};
-
-PhoneBook::PhoneBook(const PhoneBook& other)
-{
-	*this = other;
-};
-
-PhoneBook& PhoneBook::operator=(const PhoneBook& other) {
-  (void) other;
-	return (*this);
-};
-
 PhoneBook::~PhoneBook() {};
 
 int PhoneBook::addContact(void)
@@ -32,15 +21,22 @@ int PhoneBook::addContact(void)
   return (0);
 }
 
-int		PhoneBook::printInfo(void)
+void PhoneBook::printHeader() const
 {
-  std::cout << std::setw(10) << std::right << "First Name | Last Name | Nickname\n";
+  std::cout << std::setw(10) << std::right << "Index" << "|"
+            << std::setw(10) << std::right << "First Name" << "|"
+            << std::setw(10) << std::right << "Last Name" << "|"
+            << std::setw(10) << std::right << "Nickname\n";
+}
+
+void		PhoneBook::printContacts() const
+{
+  this->printHeader();
   for (size_t i = 0; i < _contactsFilled; i++)
   {
-    std::cout << std::right << i << " ";
+    std::cout << std::setw(10) << std::right << i << "|";
     _contacts[i].printContactInfo();
   }
-  return (0);
 }
 
 int PhoneBook::searchContact(void)
@@ -48,7 +44,7 @@ int PhoneBook::searchContact(void)
   std::string  input;
   int index;
 
-  this->printInfo();
+  this->printContacts();
   while (1)
   {
     std::cout << "Enter index:\n";
@@ -66,6 +62,8 @@ int PhoneBook::searchContact(void)
     }
     break;
   }
+  this->printHeader();
+  std::cout << std::setw(10) << std::right << index << "|";
   _contacts[index].printContactInfo();
   return (0);
 }

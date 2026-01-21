@@ -8,12 +8,11 @@ class	PhoneBook
 {
 	public:
 		PhoneBook();
-		PhoneBook(const PhoneBook& other);
-		PhoneBook& operator=(const PhoneBook& other);
 		~PhoneBook();
 	int addContact(void);
 	int	searchContact(void);
-	int	printInfo(void);
+  void  printHeader() const;
+	void	printContacts() const;
 
 
 	private:

@@ -1,19 +1,9 @@
 #include "Contact.hpp"
+#include "utils.hpp"
 #include <iostream>
+#include <iomanip>
 
 Contact::Contact() {};
-
-Contact::Contact(const Contact& other)
-{
-	*this = other;
-};
-
-Contact& Contact::operator=(const Contact& other)
-{
-	(void)other;
-  	return (*this);
-};
-
 Contact::~Contact() {};
 
 void	Contact::setFirstName(void)
@@ -34,9 +24,9 @@ void	Contact::setNickname(void)
 	std::cin >> _nickname;
 }
 
-void	Contact::printContactInfo(void)
+void	Contact::printContactInfo() const
 {
-	std::cout << _firstName << " | ";
-	std::cout << _lastName << " | ";
-	std::cout << _nickname << "\n";
+	std::cout << std::setw(10) << std::right << fmt10(_firstName) << "|";
+	std::cout << std::setw(10) << std::right << fmt10(_lastName) << "|";
+	std::cout << std::setw(10) << std::right << fmt10(_nickname) << "\n";
 }

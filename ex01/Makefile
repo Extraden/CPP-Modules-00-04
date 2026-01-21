@@ -7,7 +7,7 @@ CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp PhoneBook.cpp Contact.cpp utils.cpp
-INCLUDES = PhoneBook.hpp Contact.hpp
+INCLUDES = PhoneBook.hpp Contact.hpp utils.hpp
 
 # **************************************************************************** #
 #                                 Build Rules                                  #

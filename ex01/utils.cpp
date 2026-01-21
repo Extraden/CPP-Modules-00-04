@@ -10,3 +10,10 @@ bool    isNumeric(std::string input)
     }
     return (1);
 }
+
+std::string fmt10(const std::string& input)
+{
+  if (input.size() > 10)
+    return (input.substr(0, 9) += '.');
+  return (input);
+}

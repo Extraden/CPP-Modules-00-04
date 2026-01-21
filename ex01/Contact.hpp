@@ -7,14 +7,12 @@ class	Contact
 {
 	public:
 		Contact();
-		Contact(const Contact& other);
-		Contact& operator=(const Contact& other);
 		~Contact();
 
 		void	setFirstName(void);
 		void	setLastName(void);
 		void	setNickname(void);
-		void	printContactInfo(void);
+		void	printContactInfo() const;
 
 	private:
 		std::string _firstName;

@@ -2,8 +2,8 @@
 # define UTILS_HPP
 
 #include <string>
-#define WIDTH 10
 
 bool    isNumeric(std::string input);
+std::string fmt10(const std::string& input);
 
 #endif

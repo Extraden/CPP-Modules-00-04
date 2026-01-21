@@ -1,13 +1,6 @@
 #include <iostream>
 #include "PhoneBook.hpp"
 
-enum command_type {
-ADD,
-SEARCH,
-EXIT,
-IGNORE
-};
-
 int execute_command(PhoneBook& phonebook, std::string& input)
 {
   if (input == "ADD")
@@ -17,7 +10,7 @@ int execute_command(PhoneBook& phonebook, std::string& input)
   else if (input == "EXIT")
     return (1);
   else
-    return (IGNORE);
+    return (0);
 }
 
 int	main(void)
