@@ -13,29 +13,36 @@ bool	Contact::setFirstName()
   return (true);
 }
 
-void	Contact::setLastName()
+bool	Contact::setLastName()
 {
-	std::cout << "Write last name: ";
-  std::getline(std::cin, _lastName);
+	if (!readNonEmpty("Write last name: ", _lastName))
+    return (false);
+  return (true);
 }
 
-void	Contact::setNickname()
+
+bool	Contact::setNickname()
 {
-	std::cout << "Write nickname: ";
-  std::getline(std::cin, _nickname);
+	if (!readNonEmpty("Write nickname: ", _nickname))
+    return (false);
+  return (true);
 }
 
-void	Contact::setPhoneNumber()
+
+bool	Contact::setPhoneNumber()
 {
-	std::cout << "Write phone number: ";
-  std::getline(std::cin, _phoneNumber);
+	if (!readNonEmpty("Write phone number: ", _phoneNumber))
+    return (false);
+  return (true);
 }
 
-void	Contact::setDarkestSecret()
+
+bool	Contact::setDarkestSecret()
 {
-	std::cout << "Write darkest secret: ";
-  std::getline(std::cin, _darkestSecret);
+	if (!readNonEmpty("Write darkest secret: ", _darkestSecret))
+    return (false);
   std::cout << "\n";
+  return (true);
 }
 
 void	Contact::printBriefContactInfo() const

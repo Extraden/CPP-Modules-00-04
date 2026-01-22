@@ -10,10 +10,10 @@ class	Contact
 		~Contact();
 
 		bool	setFirstName();
-		void	setLastName();
-		void	setNickname();
-		void	setPhoneNumber();
-		void	setDarkestSecret();
+		bool	setLastName();
+		bool	setNickname();
+		bool	setPhoneNumber();
+		bool	setDarkestSecret();
 		void	printBriefContactInfo() const;
 		void	printFullContactInfo() const;
 

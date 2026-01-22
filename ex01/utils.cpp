@@ -1,5 +1,6 @@
 #include <cctype>
 #include <iostream>
+#include "utils.hpp"
 
 bool    isNumeric(const std::string& input)
 {

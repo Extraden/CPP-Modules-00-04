@@ -9,17 +9,27 @@
 PhoneBook::PhoneBook() : _currentIndex(0), _contactsFilled(0) {};
 PhoneBook::~PhoneBook() {};
 
-void PhoneBook::addContact()
+bool PhoneBook::addContact()
 {
-  _contacts[_currentIndex].setFirstName();
-  _contacts[_currentIndex].setLastName();
-  _contacts[_currentIndex].setNickname();
-  _contacts[_currentIndex].setPhoneNumber();
-  _contacts[_currentIndex].setDarkestSecret();
+  Contact tmp;
+
+  if (!tmp.setFirstName())
+    return (false);
+  if (!tmp.setLastName())
+    return (false);
+  if (!tmp.setNickname())
+    return (false);
+  if (!tmp.setPhoneNumber())
+    return (false);
+  if (!tmp.setDarkestSecret())
+    return (false);
+
+  _contacts[_currentIndex] = tmp;
   
   _currentIndex = (_currentIndex + 1) % 8;
   if (_contactsFilled < 8)
     _contactsFilled++;
+  return (true);
 }
 
 void PhoneBook::printHeader() const
@@ -59,15 +69,15 @@ void PhoneBook::searchContact()
     if (!std::getline(std::cin, input))
       return;
     std::cout << "\n";
-    if (!isNumeric(input) || input.empty())
+    if (!isNumeric(input))
     {
-      std::cout << "Incorrect index\nUsage: 0 - " << _contactsFilled - 1 << "\n" << "\n";
+      std::cout << "Incorrect index\nUsage: 0 - " << _contactsFilled - 1 << "\n\n";
       continue;
     }
     index = std::atoi(input.c_str());
-    if (index > static_cast<int>(_contactsFilled - 1))
+    if (index >= static_cast<int>(_contactsFilled))
     {
-      std::cout << "Index is out of scope. Try again\n" << "\n";
+      std::cout << "Index is out of range. Try again\nUsage: 0 - " << _contactsFilled - 1 << "\n\n";
       continue;
     }
     break;

@@ -1,11 +1,12 @@
 #include <iostream>
 #include "PhoneBook.hpp"
 
-int execute_command(PhoneBook& phonebook, std::string& input)
+int execute_command(PhoneBook& phonebook, const std::string& input)
 {
   if (input == "ADD")
   {
-    phonebook.addContact();
+    if (!phonebook.addContact())
+      return (1);
     return (0);
   }
   else if (input == "SEARCH")
