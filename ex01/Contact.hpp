@@ -9,7 +9,7 @@ class	Contact
 		Contact();
 		~Contact();
 
-		void	setFirstName();
+		bool	setFirstName();
 		void	setLastName();
 		void	setNickname();
 		void	setPhoneNumber();

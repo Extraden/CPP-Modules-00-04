@@ -1,5 +1,5 @@
 #include <cctype>
-#include <string>
+#include <iostream>
 
 bool    isNumeric(const std::string& input)
 {
@@ -31,4 +31,16 @@ bool  isEffectivelyEmpty(const std::string& s)
       return (false);
   }
   return (true);
+}
+
+bool  readNonEmpty(const char *prompt, std::string& out)
+{
+  while (true)
+  {
+    std::cout << prompt;
+    if (!std::getline(std::cin, out))
+      return (false);
+    if (!isEffectivelyEmpty(out))
+      return (true);
+  }
 }

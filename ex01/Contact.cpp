@@ -6,10 +6,11 @@
 Contact::Contact() {};
 Contact::~Contact() {};
 
-void	Contact::setFirstName()
+bool	Contact::setFirstName()
 {
-	std::cout << "Write first name: ";
-  std::getline(std::cin, _firstName);
+  if (!readNonEmpty("Write first name: ", _firstName))
+    return (false);
+  return (true);
 }
 
 void	Contact::setLastName()
