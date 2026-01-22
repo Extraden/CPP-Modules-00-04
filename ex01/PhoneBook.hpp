@@ -14,7 +14,6 @@ class	PhoneBook
   void  printHeader() const;
 	void	printContacts() const;
 
-
 	private:
 
 		Contact	_contacts[8];

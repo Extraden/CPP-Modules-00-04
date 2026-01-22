@@ -5,5 +5,6 @@
 
 bool    isNumeric(const std::string& input);
 std::string fmt10(const std::string& input);
+bool  isEffectivelyEmpty(const std::string& s);
 
 #endif

@@ -17,10 +17,10 @@ DEPS = $(OBJS:.o=.d)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -I. $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -MP -MMD -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I. -MP -MMD -c $< -o $@
 
 clean:
 	rm -f $(OBJS) $(DEPS)

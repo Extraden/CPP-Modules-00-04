@@ -19,3 +19,16 @@ std::string fmt10(const std::string& input)
     return (input.substr(0, 9) += '.');
   return (input);
 }
+
+bool  isEffectivelyEmpty(const std::string& s)
+{
+  if (s.empty())
+    return (true);
+
+  for (size_t i = 0; i < s.size(); i++)
+  {
+    if (!std::isspace(s[i]))
+      return (false);
+  }
+  return (true);
+}

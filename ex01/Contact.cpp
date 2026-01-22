@@ -46,9 +46,9 @@ void	Contact::printBriefContactInfo() const
 
 void	Contact::printFullContactInfo() const
 {
-	std::cout << _firstName << "\n"
-            << _lastName << "\n"
-            << _nickname << "\n"
-            << _phoneNumber << "\n"
-            << _darkestSecret << "\n";
+	std::cout << "First Name: " << _firstName << "\n"
+            << "Last Name: " << _lastName << "\n"
+            << "Nickname: " << _nickname << "\n"
+            << "Phone Number: " << _phoneNumber << "\n"
+            << "Darkest Secret: " << _darkestSecret << "\n";
 }
