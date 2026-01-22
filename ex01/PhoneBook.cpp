@@ -69,12 +69,12 @@ void PhoneBook::searchContact()
     if (!std::getline(std::cin, input))
       return;
     std::cout << "\n";
-    if (!isNumeric(input))
+    if (input.size() != 1 || !std::isdigit(static_cast<unsigned char>(input[0])))
     {
       std::cout << "Incorrect index\nUsage: 0 - " << _contactsFilled - 1 << "\n\n";
       continue;
     }
-    index = std::atoi(input.c_str());
+    index = input[0] - '0';
     if (index >= static_cast<int>(_contactsFilled))
     {
       std::cout << "Index is out of range. Try again\nUsage: 0 - " << _contactsFilled - 1 << "\n\n";
