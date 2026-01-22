@@ -9,31 +9,31 @@ Contact::~Contact() {};
 void	Contact::setFirstName()
 {
 	std::cout << "Write first name: ";
-	std::cin >> _firstName;
+  std::getline(std::cin, _firstName);
 }
 
 void	Contact::setLastName()
 {
 	std::cout << "Write last name: ";
-	std::cin >> _lastName;
+  std::getline(std::cin, _lastName);
 }
 
 void	Contact::setNickname()
 {
 	std::cout << "Write nickname: ";
-	std::cin >> _nickname;
+  std::getline(std::cin, _nickname);
 }
 
 void	Contact::setPhoneNumber()
 {
 	std::cout << "Write phone number: ";
-	std::cin >> _phoneNumber;
+  std::getline(std::cin, _phoneNumber);
 }
 
 void	Contact::setDarkestSecret()
 {
 	std::cout << "Write darkest secret: ";
-	std::cin >> _darkestSecret;
+  std::getline(std::cin, _darkestSecret);
   std::cout << "\n";
 }
 

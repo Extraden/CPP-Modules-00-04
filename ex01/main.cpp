@@ -4,9 +4,15 @@
 int execute_command(PhoneBook& phonebook, std::string& input)
 {
   if (input == "ADD")
-    return (phonebook.addContact());
+  {
+    phonebook.addContact();
+    return (0);
+  }
   else if (input == "SEARCH")
-    return (phonebook.searchContact());
+  {
+    phonebook.searchContact();
+    return (0);
+  }
   else if (input == "EXIT")
     return (1);
   else
@@ -21,8 +27,8 @@ int	main()
   while (1)
   {
     std::cout << "Type a command: ";
-    std::cin >> input_command;
-    std::cout << std::endl;
+    std::getline(std::cin, input_command);
+    std::cout << "\n";
     if (execute_command(phonebook, input_command) == 1)
       break;
   }
